@@ -13,9 +13,11 @@ function readinput(day::String)
     input  
 end
 
-days = 1:0
+days = 1:1
 for day in days
     includeday(lpad(day, 2, "0"))
 end
+
+day01() = Day01.day01(readinput("01"))
 
 end # module

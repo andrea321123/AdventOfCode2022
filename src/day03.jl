@@ -1,6 +1,5 @@
 module Day03
 
-using Chain
 using IterTools
 
 function part1(input::Array{String})

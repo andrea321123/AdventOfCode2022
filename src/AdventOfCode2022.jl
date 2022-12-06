@@ -13,7 +13,7 @@ function readinput(day::String)
     input  
 end
 
-days = 1:5
+days = 1:6
 for day in days
     includeday(lpad(day, 2, "0"))
 end
@@ -23,5 +23,6 @@ day02() = Day02.day02(readinput("02"))
 day03() = Day03.day03(readinput("03"))
 day04() = Day04.day04(readinput("04"))
 day05() = Day05.day05(readinput("05"))
+day06() = Day06.day06(readinput("06"))
 
 end # module

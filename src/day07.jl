@@ -1,7 +1,5 @@
 module Day07
 
-using Chain
-
 struct Fs
     name::String
     isdir::Bool

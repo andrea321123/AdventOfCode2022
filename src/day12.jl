@@ -37,16 +37,13 @@ function day12(input::String)
     println(length(l))
 
     # Part two
-    l = length(l)
-    for i in 1:n
-        for j in 1:m
-            if input[i, j] == 'a'
-                c = length(a_star(g, linear(i, j, m), linear(e[1], e[2], m)))
-                if c != 0        # c is 0 if destination in unrechable
-                    l = min(l, curr)
-                end
-            end
-        end
+    l = @chain input begin
+        findall(x -> x == 'a', _)
+        map(x -> (x[1], x[2]), _)
+        map(x -> a_star(g, linear(x[1], x[2], m), linear(e[1], e[2], m)), _)
+        map(length, _)
+        filter(x -> x != 0, _)      # distance is 0 if destination is unreachable
+        foldl(min, _)
     end
     println(l)
 end

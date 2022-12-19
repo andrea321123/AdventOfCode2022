@@ -58,8 +58,7 @@ function day19(input::String)
     println(p1)
     p2 = @chain input[1:3] begin
         map(x -> solve(x, 32), _)
-        map(x -> x[1] * x[2], enumerate(_))
-        sum
+        foldl(*, _)
     end
     println(p2)
 end

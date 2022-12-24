@@ -1,4 +1,4 @@
-module day22
+module Day22
 
 function day22(_::String)
     println("Part 1 not solved")
